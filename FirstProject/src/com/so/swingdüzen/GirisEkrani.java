@@ -10,11 +10,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class GirisEkrani {
+public class GirisEkrani{
 	CardLayout cardLayout;
 	JPanel jPanel;
 	JPanel jPanelGirisEkrani;
@@ -27,12 +28,13 @@ public class GirisEkrani {
 	JButton jButtonKayit;
 	KayitOl kayitOl;
 	JButton jButtonCik;
+	MyEkran myEkran;
 	
 	public GirisEkrani(CardLayout cardLayout, JPanel jPanel) {
 		this.cardLayout = cardLayout;
 		this.jPanel = jPanel;
 		anaSayfa = new AnaSayfa();
-		
+		myEkran = new MyEkran(1);
 	}
 
 	public GirisEkrani() {
@@ -83,15 +85,19 @@ public class GirisEkrani {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				kullaniciAdi = jTextField1.getText();
-				sifre = jTextField2.getText();
+				
+				if(jTextField1.isValid()){
+					kullaniciAdi = jTextField1.getText();
+					
+					sifre = jTextField2.getText();
+				}
+				
 				
 				LoginKontrol loginKontrol = new LoginKontrol("D:/ödevDosyasý/login kisi/kisiler.txt");
 				
-				if(loginKontrol.kontrolEt(kullaniciAdi,sifre))
+				if(loginKontrol.kontrolEt(kullaniciAdi,sifre)){
 				cardLayout.show(jPanel, "ana");
-				
-				
+				}
 			}
 		});
 		
@@ -106,6 +112,14 @@ public class GirisEkrani {
 		});
 		
 
+		jButtonCik.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Islem.ekranKapa();
+				
+			}
+		});
 	}
 	
 }

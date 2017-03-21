@@ -15,8 +15,14 @@ public class LoginKontrol {
 		File file = new File(path);
 		try {
 			Scanner sc = new Scanner(file);
+			String adi,sifree;
+			
 			while(sc.hasNextLine()){
-				if(sc.next().equals(kullaniciAdi)&&sc.next().equals(sifre)){
+				
+				adi = sc.next(); 
+				sifree = sc.next();
+				
+				if(adi.equals(kullaniciAdi)&&sifree.equals(sifre)){
 					return true;
 				}
 			}
@@ -24,8 +30,6 @@ public class LoginKontrol {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-	
-		
 		return false;
 	}
 	

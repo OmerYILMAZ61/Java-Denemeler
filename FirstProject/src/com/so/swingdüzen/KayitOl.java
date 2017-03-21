@@ -54,8 +54,8 @@ public class KayitOl {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String kullaniciAdi = jTextField.getText() +" ";
-				String sifre = jTextField2.getText() + "\r\n";
+				String kullaniciAdi = "\r\n"+jTextField.getText() +" ";
+				String sifre = jTextField2.getText();
 				File file = new File(path);
 				try {
 					

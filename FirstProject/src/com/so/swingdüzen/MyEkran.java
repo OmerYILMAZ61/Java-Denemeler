@@ -25,6 +25,9 @@ public class MyEkran extends JFrame {
 	// JPanel jPanelSol;
 	// JPanel jPanelAlt;
 
+	public MyEkran(int t){
+		
+	}
 	public MyEkran() {
 		setSize(250, 250);
 		setLocationRelativeTo(null);
@@ -51,7 +54,6 @@ public class MyEkran extends JFrame {
 		cardLayout = new CardLayout();
 		jPanel = new JPanel(cardLayout);
 		
-		
 		add(jPanel);
 		
 
@@ -60,6 +62,10 @@ public class MyEkran extends JFrame {
 	public void girisEkrani() {
 		girisEkrani = new GirisEkrani(cardLayout,jPanel);
 		girisEkrani.girisEkraniOlustur();
+	}
+	
+	public void ekranKapa(){
+		Islem.ekranKapa();
 	}
 
 }

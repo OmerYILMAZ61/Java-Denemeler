@@ -1,4 +1,4 @@
-package com.swingdeneme;
+package com.swingdeneme.swing;
 
 public class Islem {
 

@@ -1,4 +1,4 @@
-package com.swingdeneme;
+package com.swingdeneme.swing;
 
 import java.io.File;
 import java.io.FileNotFoundException;

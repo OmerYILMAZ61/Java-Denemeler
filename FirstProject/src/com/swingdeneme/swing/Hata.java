@@ -1,4 +1,4 @@
-package com.swingdeneme;
+package com.swingdeneme.swing;
 
 import java.awt.CardLayout;
 import java.awt.FlowLayout;
